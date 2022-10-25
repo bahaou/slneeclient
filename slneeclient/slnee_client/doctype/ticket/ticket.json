@@ -1,0 +1,166 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2022-10-25 12:06:52.361330",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "status",
+  "processing_by",
+  "amended_from",
+  "column_break_4",
+  "posting_time",
+  "priority",
+  "contact_section",
+  "user",
+  "column_break_8",
+  "email",
+  "mobile",
+  "section_break_11",
+  "reason",
+  "request_meeting",
+  "column_break_14",
+  "module",
+  "section_break_16",
+  "description"
+ ],
+ "fields": [
+  {
+   "default": "Ticket",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "Ticket",
+   "read_only": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "status",
+   "options": "Draft\nPending\nIn Process\nClosed\nCancelled\nCompleted",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Ticket",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "now",
+   "fieldname": "posting_time",
+   "fieldtype": "Datetime",
+   "label": "Posting Time"
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Data",
+   "label": "User"
+  },
+  {
+   "fieldname": "contact_section",
+   "fieldtype": "Section Break",
+   "label": "Contact"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "mobile",
+   "fieldtype": "Data",
+   "label": "Mobile"
+  },
+  {
+   "fieldname": "section_break_11",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Long Text",
+   "label": "Description"
+  },
+  {
+   "default": "Medium",
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "Low\nMedium\nHigh"
+  },
+  {
+   "default": "Bug",
+   "fieldname": "reason",
+   "fieldtype": "Select",
+   "label": "Reason",
+   "options": "Bug\nCustomization\nNew feature\nTraining\nServer not running"
+  },
+  {
+   "depends_on": "eval:doc.reason!=\"Server not running\";",
+   "fieldname": "module",
+   "fieldtype": "Select",
+   "label": "Module",
+   "options": "Accounting\nSelling\nBuying\nManufacturing\nPayroll\nLoans\nStock\nHR\nOther"
+  },
+  {
+   "fieldname": "column_break_14",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_16",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.status==\"In Process\";",
+   "fieldname": "processing_by",
+   "fieldtype": "Data",
+   "label": "Processing By",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "description": "Only for emergency situations.",
+   "fieldname": "request_meeting",
+   "fieldtype": "Check",
+   "label": "Request Meeting"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-10-25 12:36:14.310962",
+ "modified_by": "Administrator",
+ "module": "Slnee Client",
+ "name": "Ticket",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
